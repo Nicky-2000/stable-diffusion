@@ -16,7 +16,7 @@ model:
     concat_mode: true # there will be no context_dim specified in unet,
     monitor: val/loss_simple_ema
     # scale_factor: 0.18215
-    ckpt_path: "models/ldm/inpainting_big/last.ckpt"
+    ckpt_path: "models/ldm/original_inpainting/last.ckpt"
     
     unet_config:
       target: ldm.modules.diffusionmodules.openaimodel.UNetModel
@@ -86,6 +86,7 @@ data:
 
 lightning:
   find_unused_parameters: False
+  max_epochs: 40
 
   callbacks:
     image_logger:
