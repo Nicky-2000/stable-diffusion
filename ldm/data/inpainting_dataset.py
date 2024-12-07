@@ -28,7 +28,8 @@ class InpaintingBase(Dataset):
         self.transform = None
         self.transform_mask = None
 
-        self.interpolation = {"linear": PIL.Image.LINEAR,
+        self.interpolation = {
+            # "linear": PIL.Image.LINEAR,
                               "bilinear": PIL.Image.BILINEAR,
                               "bicubic": PIL.Image.BICUBIC,
                               "lanczos": PIL.Image.LANCZOS,

@@ -5,7 +5,7 @@ from tqdm import tqdm
 import numpy as np
 import torch
 # CHANGE WITH YOUR PATH
-from main import instantiate_from_config
+from ldm.util import instantiate_from_config
 from ldm.models.diffusion.ddim import DDIMSampler
 from inpaint_utils import seed_everything
 from inpaint_utils import make_batch, plot_row_original_mask_output

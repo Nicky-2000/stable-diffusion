@@ -67,20 +67,20 @@ model:
 data:
   target: main.DataModuleFromConfig
   params:
-    batch_size: 2
+    batch_size: 8
     num_workers: 5
     wrap: false
     train:
-      target: ldm.inpainting_dataset.InpaintingTrain
+      target: ldm.data.inpainting_dataset.InpaintingTrain
       params:
-        csv_file: data/INPAINTING/yfl_line.csv
-        data_root: data/INPAINTING/yfl_line
+        csv_file: data/latent-diffusion/x_train.csv
+        data_root: ""
         size: 512
     validation:
-      target: ldm.inpainting_dataset.InpaintingValidation
+      target: ldm.data.inpainting_dataset.InpaintingValidation
       params:
-        csv_file: data/INPAINTING/yfl_line.csv
-        data_root: data/INPAINTING/yfl_line
+        csv_file: data/latent-diffusion/x_val.csv
+        data_root: ""
         size: 512
 
 
