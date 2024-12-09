@@ -5,6 +5,8 @@ from tqdm import tqdm
 import numpy as np
 import torch
 # CHANGE WITH YOUR PATH
+import sys
+sys.path.append('/content/stable-diffusion')
 from ldm.util import instantiate_from_config
 from ldm.models.diffusion.ddim import DDIMSampler
 from inpaint_utils import seed_everything
