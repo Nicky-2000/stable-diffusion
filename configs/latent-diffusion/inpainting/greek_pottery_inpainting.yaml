@@ -59,7 +59,7 @@ model:
           - 4
           num_res_blocks: 2
           attn_resolutions: []
-          dropout: 0.1
+          dropout: 0.0
         lossconfig:
           target: torch.nn.Identity # NO TRAIN FOR AUTOENCODER
     cond_stage_config: __is_first_stage__
@@ -67,26 +67,26 @@ model:
 data:
   target: main.DataModuleFromConfig
   params:
-    batch_size: 8
+    batch_size: 4
     num_workers: 5
     wrap: false
     train:
       target: ldm.data.inpainting_dataset.InpaintingTrain
       params:
-        csv_file: /content/stable-diffusion/latent-diffusion/x_train.csv
+        csv_file: /content/stable-diffusion/Pattern_Vase_Dataset/x_train.csv
         data_root: ""
         size: 512
     validation:
       target: ldm.data.inpainting_dataset.InpaintingValidation
       params:
-        csv_file: /content/stable-diffusion/latent-diffusion/x_val.csv
+        csv_file: /content/stable-diffusion/Pattern_Vase_Dataset/x_val.csv
         data_root: ""
         size: 512
 
 
 lightning:
   find_unused_parameters: False
-  max_epochs: 40
+  max_epochs: 50
 
   callbacks:
     image_logger:
